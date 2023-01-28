@@ -42,7 +42,7 @@
 
 This small tool was created as a result of [this discussion on bitcointalk.org](https://bitcointalk.org/index.php?topic=5437062.0).
 
-The "Solomining Probability Calculator" is a tool designed to assist solo miners in understanding their chances of successfully mining a block on the Bitcoin network. The program takes the user's hash rate as input, supporting various formats for ease of use. It also retrieves the current Bitcoin network difficulty which is then used to calculate a range of important mining metrics. These include the expected time to mine a block and the probability of successfully mining a block for various time frames. Additionally, the program offers helpful analogy and phrases to provide a better human-understanding of the probabilities, making it easier for users to interpret the results. With this tool, solo miners can gain valuable insights into their mining operations and make more informed decisions. Overall, the solomining probability calculator is a valuable tool for any solo miner looking to increase their chances of success in the competitive world of cryptocurrency mining.
+The "Solomining Probability Calculator" is a tool designed to assist solo miners in understanding their chances of successfully mining a block on the Bitcoin network. The program takes the user's hash rate as input, supporting various formats for ease of use. It also retrieves the current Bitcoin network difficulty which is then used to calculate a range of important mining metrics. These include the ratio of all hashes over the valid hashes, the probability of each single hash attempt, expected time to mine a block and the probability of successfully mining a block for various time frames. Additionally, the program offers helpful analogy and phrases to provide a better human-understanding of the probabilities, making it easier for users to interpret the results. With this tool, solo miners can gain valuable insights into their mining operations and make more informed decisions. Overall, the solomining probability calculator is a valuable tool for any solo miner looking to increase their chances of success in the competitive world of cryptocurrency mining.
 
 If you found this project useful and helpful, please consider making a donation to my bitcoin address bc1qycq57rtc2rjgslqk8kehjequ9z5egane**thanks** to support its continued development and maintenance. Your support is greatly appreciated and will go a long way in ensuring that this project continues to be a valuable resource for others. Thank you for your generosity!
 
@@ -157,6 +157,10 @@ Executing API query to retrieve some Bitcoin network information ...
 Current Bitcoin difficulty is: 37,590,453,655,497.094 (37.59 T)
 Current Bitcoin overall network hashrate is: 281,754,256,197,767,004,160.00 (281.75 EH/s)
 
+Ratio of all hashes over the valid hashes means that:
+1 hash in 161,452,232,657,725,468,704,768 results in a valid block.
+Or each single hash attempt has a chance of 0.000000000000000000000006193782 %
+==================================================================================================
 Entered hash rate of 140.0 TH/sec equals to: 140,000,000,000,000.00 hashes/sec
 The ratio of the solo mining hash rate related to the total network hash rate is: 0.000050 %
 
@@ -227,6 +231,10 @@ Executing API query to retrieve some Bitcoin network information ...
 Current Bitcoin difficulty is: 37,590,453,655,497.094 (37.59 T)
 Current Bitcoin overall network hashrate is: 281,754,256,197,767,004,160.00 (281.75 EH/s)
 
+Ratio of all hashes over the valid hashes means that:
+1 hash in 161,452,232,657,725,468,704,768 results in a valid block.
+Or each single hash attempt has a chance of 0.000000000000000000000006193782 %
+==================================================================================================
 Entered hash rate of 50.0 PH/sec equals to: 50,000,000,000,000,000.00 hashes/sec
 The ratio of the solo mining hash rate related to the total network hash rate is: 0.018 %
 
