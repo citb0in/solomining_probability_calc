@@ -14,7 +14,7 @@ import re
 ####################
 
 # Uncomment following line(s) for manually seting the difficulty/netrate to a value of your choice
-#diff = 123456789.1234
+#diff = 37590453655497.094
 #netrate = 77889900112233.555
 
 # Number of chars to print as horizontal line separator, on a widescreen you could try 200
@@ -40,6 +40,14 @@ def get_diff_and_netrate(diff_from_api=False,netrate_from_api=False):
             netrate = response.json()["currentHashrate"]
             netrate_from_api = True
     return diff, netrate, diff_from_api, netrate_from_api
+
+def get_probability_single_hash():
+    """Function to calculate the probability of a single hash solving a block"""
+    # the target represents the number of valid hashes
+    # ratio of all hashes over valid hashes => 2**256 / (0xffff*2**208 / D)
+    ratio = diff * 2**48 / 0xffff
+    prob = 1/ratio
+    return ratio, prob
 
 def get_proportion_of_netrate(hashrate):
     """Function to set the hashrate of the solominer in relation to the total network rate"""
@@ -184,16 +192,17 @@ diff_formatted, netrate_formatted = scale_unit(diff), scale_unit(netrate)+"H/s"
 hashrate_nounit, hashrate_unit, hashrate_raw = format_input(hashrate_input)
 proportion, netrate_prec = get_proportion_of_netrate(hashrate_raw)
 expected_blockhit_time, expected_blockhit_rel_net, prob_per_block, prob_per_hour, prob_per_day, prob_per_week, prob_per_month, prob_per_halfyear, prob_per_year, prob_prec, netrate_prec = calculate_probability(hashrate_raw)
-
+single_ratio, single_prob = get_probability_single_hash()
 
 ##########
 # Output #
 ##########
 
-print(f"{'Manually set Bitcoin difficulty:' if not diff_from_api else 'Current Bitcoin difficulty is:'} {diff:,.3f} ({diff_formatted})\n{'Manually set Bitcoin network hashrate:' if not netrate_from_api else 'Current Bitcoin overall network hashrate is:'} {netrate:,.2f} ({netrate_formatted})")
+print(f"{'Manually set Bitcoin difficulty:' if not diff_from_api else 'Current Bitcoin difficulty is:'} {diff:,.3f} ({diff_formatted})\n{'Manually set Bitcoin network hashrate:' if not netrate_from_api else 'Current Bitcoin overall network hashrate is:'} {netrate:,.2f} ({netrate_formatted})\n")
+print('\nRatio of all hashes over the valid hashes means that:\n1 hash in {:,.0f}'.format(single_ratio),'results in a valid block.\nOr each single hash attempt has a chance of {:,.30f} %'.format(single_prob))
+print('=' * sep)
 print(f'\nEntered hash rate of {hashrate_nounit} {hashrate_unit}H/sec equals to: {hashrate_raw:,.2f} hashes/sec\nThe ratio of the solo mining hash rate related to the total network hash rate is: {proportion:,.{netrate_prec}f} %\n')
 print('=' * sep)
-
 # Display probability as decimal value, percentage, "1 in x" format and as description / analogy text
 print(f'Probability per 10min: {prob_per_block:,.{prob_prec}f} ({prob_per_block*100:,.{prob_prec}f} %) or 1 in {1/prob_per_block:,.0f}')
 print(f'\nIn words: The chance of mining a block with the given hashrate within a 10min period is similar to the probability of picking a red winning ball from a jar containing {int(round(1/prob_per_block,0)):,} white balls. Or: The probability of such an event happening is {str(describe_probability(prob_per_block))}')
