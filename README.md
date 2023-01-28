@@ -44,7 +44,7 @@ This small tool was created as a result of [this discussion on bitcointalk.org](
 
 The "Solomining Probability Calculator" is a tool designed to assist solo miners in understanding their chances of successfully mining a block on the Bitcoin network. The program takes the user's hash rate as input, supporting various formats for ease of use. It also retrieves the current Bitcoin network difficulty which is then used to calculate a range of important mining metrics. These include the expected time to mine a block and the probability of successfully mining a block for various time frames. Additionally, the program offers helpful analogy and phrases to provide a better human-understanding of the probabilities, making it easier for users to interpret the results. With this tool, solo miners can gain valuable insights into their mining operations and make more informed decisions. Overall, the solomining probability calculator is a valuable tool for any solo miner looking to increase their chances of success in the competitive world of cryptocurrency mining.
 
-If you found this project useful and helpful, please consider making a donation to my bitcoin address bc1qycq57rtc2rjgslqk8kehjequ9z5eganethanks to support its continued development and maintenance. Your support is greatly appreciated and will go a long way in ensuring that this project continues to be a valuable resource for others. Thank you for your generosity!
+If you found this project useful and helpful, please consider making a donation to my bitcoin address bc1qycq57rtc2rjgslqk8kehjequ9z5egane**thanks** to support its continued development and maintenance. Your support is greatly appreciated and will go a long way in ensuring that this project continues to be a valuable resource for others. Thank you for your generosity!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,8 +150,7 @@ Or some weird input styles
 
 
 ## Output example for 140 TH/s @2023/Jan/28
-
-$ ./solomining_probability_calc.py 
+```
 Enter the hashrate/sec of your solo miner: 140t
 Executing API query to retrieve some Bitcoin network information ...
 
@@ -217,11 +216,11 @@ Expected average time to hit a block:
 Expected average time (relative to overall network):
 1,207,518,240.8 sec = 20,125,304.0 min = 335,421.7 h = 13,975.9 days = 1,996.6 weeks = 460.0 months = 38.3 years
 ==================================================================================================
-
+```
 
 
 ## Output example for 50 PH/s @2023/Jan/28
-
+```
 Enter the hashrate/sec of your solo miner: 50 PH
 Executing API query to retrieve some Bitcoin network information ...
 
@@ -287,7 +286,7 @@ Expected average time to hit a block:
 Expected average time (relative to overall network):
 3,381,051.1 sec = 56,350.9 min = 939.2 h = 39.1 days = 5.6 weeks = 1.3 months = 0.1 years
 ==================================================================================================
-
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
