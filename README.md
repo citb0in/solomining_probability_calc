@@ -40,7 +40,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This small tool was created as a result of [this discussion on bitcointalk.org](https://bitcointalk.org/index.php?topic=xxxxxxx.0).
+This small tool was created as a result of [this discussion on bitcointalk.org](https://bitcointalk.org/index.php?topic=5437062.0).
 
 The "Solomining Probability Calculator" is a tool designed to assist solo miners in understanding their chances of successfully mining a block on the Bitcoin network. The program takes the user's hash rate as input, supporting various formats for ease of use. It also retrieves the current Bitcoin network difficulty which is then used to calculate a range of important mining metrics. These include the expected time to mine a block and the probability of successfully mining a block for various time frames. Additionally, the program offers helpful analogy and phrases to provide a better human-understanding of the probabilities, making it easier for users to interpret the results. With this tool, solo miners can gain valuable insights into their mining operations and make more informed decisions. Overall, the solomining probability calculator is a valuable tool for any solo miner looking to increase their chances of success in the competitive world of cryptocurrency mining.
 
