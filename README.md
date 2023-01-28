@@ -27,6 +27,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Changelog</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -297,6 +298,10 @@ Expected average time (relative to overall network):
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CHANGELOG -->
+## Changelog
+2023/Jan/28 Added new function which calculates the probability of each single hash attempt
 
 <!-- ROADMAP -->
 ## Roadmap
