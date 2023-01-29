@@ -68,9 +68,20 @@ To get a local copy up and running follow these simple steps.
 
 Note: Python2 is not supported.
 
-* Python3 libs
+* Python3 libs required
 ```requests, re```
 
+To install:
+   ```sh
+   pip3 install requests
+   ```
+   
+   -or-
+   
+   ```sh
+   pip install requests
+   ```
+   
 ### Installation
 
 1. Ensure you are running Python3
