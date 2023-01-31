@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ##########################################
-#         2023/Jan/28 by citb0in         #
+#         2023/Jan/31 by citb0in         #
 #       https://github.com/citb0in       #
 #                                        #
 #   This project is licensed under the   #
@@ -26,19 +26,20 @@ sep = 150
 
 def get_diff_and_netrate(diff_from_api=False,netrate_from_api=False):
     """Function for getting the current Bitcoin difficulty and network hashrate from API"""
+    print("Executing API query to retrieve some Bitcoin network information ...\n")
     global diff
     global netrate
-    if 'diff' not in globals() or 'netrate' not in globals():
+    try:
         response = requests.get("https://mempool.space/api/v1/mining/hashrate/3d")
-        print("Executing API query to retrieve some Bitcoin network information ...\n")
-        if response.status_code != 200:
-            raise Exception("Failed to retrieve data from API")
-        if 'diff' not in globals():
-            diff = response.json()["currentDifficulty"]
-            diff_from_api = True
-        if 'netrate' not in globals():
-            netrate = response.json()["currentHashrate"]
-            netrate_from_api = True
+        if 'diff' not in globals() or 'netrate' not in globals():
+            if 'diff' not in globals():
+                diff = response.json()["currentDifficulty"]
+                diff_from_api = True
+            if 'netrate' not in globals():
+                netrate = response.json()["currentHashrate"]
+                netrate_from_api = True
+    except requests.ConnectionError:
+        raise Exception("Failed to retrieve data from API")
     return diff, netrate, diff_from_api, netrate_from_api
 
 def get_probability_single_hash():
